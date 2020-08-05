@@ -3,25 +3,30 @@ import { Navigation } from "./Navigation";
 import {
   SectionWrapper,
   Title,
+  SectionTitle,
   SmallSubTitle,
   Paragraph,
   WrapperCol,
-  ParagraphBold,
+  WrapperImages,
 } from "../lib/stylesheet";
 import { Zeppeliner } from "../assets/Zeppeliner";
-import { DownButton } from "./DownButton";
+import { ImageOne } from "../assets/ImageOne";
+import { ImageTwo } from "../assets/ImageTwo";
+import { Button } from "./Button";
+import { TransformationCard } from "./TransformationCard";
 
 export const Home = () => {
   const white = "rgb(255, 255, 255)";
   const darkGrey = "rgb(42, 42, 44)";
   const red = "rgb(219, 100, 88)";
+  const black = "rgb(27, 27, 29)";
 
   return (
     <>
       <Navigation />
       <SectionWrapper background={darkGrey}>
+        <Zeppeliner color={white} />
         <WrapperCol>
-          <Zeppeliner color={white} />
           <Title>Digital transformation</Title>
           <SmallSubTitle>Rådgivning. Implementering. Resultater.</SmallSubTitle>
           <Paragraph>
@@ -33,13 +38,46 @@ export const Home = () => {
             vil rundt og se sig om i byen.
           </Paragraph>
         </WrapperCol>
-        <WrapperCol>
-          <ParagraphBold>Start din rejse her</ParagraphBold>
-          <DownButton />
-        </WrapperCol>
+        <Button
+          fontSize="1rem"
+          text="Start din rejse her"
+          color={white}
+          top="0.4rem"
+          center="0.5rem"
+          bottom="0.6rem"
+        />
       </SectionWrapper>
-      <SectionWrapper background={white}></SectionWrapper>
-      <SectionWrapper background={red}></SectionWrapper>
+      <SectionWrapper background={white}>
+        <SectionTitle>
+          Vi kan hjælpa dig med digital transformation på to fronter
+        </SectionTitle>
+        <WrapperImages>
+          <TransformationCard
+            title="To røde og en grøn"
+            paragraph="Selv om hun har sat alt mere frem, og derfor ikke længere kan betragtes
+        som den glade giver, er det en nem sammenstilling, som bærer ved i lang
+        tid."
+            icon={<ImageOne color={black} />}
+          />
+          <TransformationCard
+            title="To røde og en grøn"
+            paragraph="Selv om hun har sat alt mere frem, og derfor ikke længere kan betragtes
+        som den glade giver, er det en nem sammenstilling, som bærer ved i lang
+        tid."
+            icon={<ImageTwo color={black} />}
+          />
+        </WrapperImages>
+      </SectionWrapper>
+      <SectionWrapper background={red}>
+        <Button
+          fontSize="1rem"
+          text="Tilbage til toppen"
+          color={white}
+          top="0.6rem"
+          center="0.5rem"
+          bottom="0.4rem"
+        />
+      </SectionWrapper>
     </>
   );
 };

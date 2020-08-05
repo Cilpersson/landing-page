@@ -15,7 +15,7 @@ export const Zeppeliner = ({ color }) => {
       return "50%";
     }
     if (width > 1024) {
-      return "25%";
+      return "15%";
     } else {
       return "30%";
     }

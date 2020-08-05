@@ -1,8 +1,9 @@
 import React from "react";
 
-export const ImageOne = () => {
+export const ImageOne = ({ color }) => {
   return (
     <svg
+      fill={color}
       xmlns="http://www.w3.org/2000/svg"
       x="0"
       y="0"

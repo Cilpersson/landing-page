@@ -1,7 +1,7 @@
 #### BASIC REQ
 
-- [ ] Navigation menu
-- [ ] Heading
+- [x] Navigation menu
+- [x] Heading
 - [ ] Short lead
 - [ ] Body text
 - [ ] Form => - input for name, telephone number e-mail address, zip code and city.
