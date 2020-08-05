@@ -22,6 +22,7 @@ export const Title = styled.h1`
 `;
 
 export const SectionTitle = styled.h2`
+  color: ${(props) => props.color};
   font-size: 1.5rem;
   font-weight: 900;
   max-width: 868px;
@@ -43,7 +44,7 @@ export const SubTitle = styled.h3`
 export const SmallSubTitle = styled.h6`
   color: ${(props) => props.color || "rgb(255, 255, 255)"};
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 `;
 
 export const Paragraph = styled.p`
@@ -81,10 +82,19 @@ export const WrapperRow = styled.div`
   display: flex;
   align-items: center;
   margin: ${(props) => props.margin};
+  width: 100%;
 `;
 export const WrapperCol = styled(WrapperRow)`
   flex-direction: column;
   max-width: ${(props) => props.width};
+`;
+
+export const WrapperForm = styled(WrapperRow)`
+  justify-content: space-between;
+
+  @media (max-width: 668px) {
+    flex-direction: column;
+  }
 `;
 
 // For images in second section
@@ -171,3 +181,26 @@ export const DotsWrapper = styled(ButtonWrapper)`
 `;
 
 /* FORM */
+export const Form = styled.form`
+  display: flex;
+  width: 100%;
+  max-width: 868px;
+`;
+
+export const Input = styled.input`
+  text-align: left;
+  width: ${(props) => props.width};
+  background: none;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+
+  &::-webkit-input-placeholder {
+    opacity: 0.5;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+  }
+`;

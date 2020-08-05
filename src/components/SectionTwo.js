@@ -6,12 +6,11 @@ import { TransformationCard } from "./TransformationCard";
 
 export const SectionTwo = () => {
   const white = "rgb(255, 255, 255)";
-
   const black = "rgb(27, 27, 29)";
 
   return (
     <SectionWrapper background={white}>
-      <SectionTitle>
+      <SectionTitle color={black}>
         Vi kan hjælpa dig med digital transformation på to fronter
       </SectionTitle>
       <WrapperImages>
