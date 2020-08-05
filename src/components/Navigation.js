@@ -6,7 +6,7 @@ import { Navbar, Filler } from "../lib/stylesheet";
 export const Navigation = () => {
   return (
     <Navbar>
-      <Logo color="rgb(255, 255, 255)" width="25" />
+      <Logo color="rgb(255, 255, 255)" width="50%" />
       <Hamburger />
       <Filler />
     </Navbar>

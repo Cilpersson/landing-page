@@ -1,12 +1,12 @@
 import React from "react";
-import { BurgerWrapper, BurgerPatty } from "../lib/stylesheet";
+import { ButtonWrapper, BurgerPatty } from "../lib/stylesheet";
 
 export const Hamburger = () => {
   return (
-    <BurgerWrapper>
+    <ButtonWrapper>
       <BurgerPatty />
       <BurgerPatty />
       <BurgerPatty />
-    </BurgerWrapper>
+    </ButtonWrapper>
   );
 };

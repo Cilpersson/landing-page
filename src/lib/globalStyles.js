@@ -5,12 +5,12 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0;
   margin: 0;
   box-sizing: border-box;  
-  font-family: 'Open Sans', sans-serif;
   text-align: center;
+  font-family: Avenir,Helvetica,"sans-serif";
 }
 
 body::-webkit-scrollbar {
-  width: 5px;
+  width: 1rem;
   background: rgb(215,215,215);
 }
 
