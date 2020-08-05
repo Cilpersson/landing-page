@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 import {
   SectionWrapper,
   Title,
@@ -7,14 +8,14 @@ import {
   WrapperCol,
 } from "../lib/stylesheet";
 import { Zeppeliner } from "../assets/Zeppeliner";
-import { Button } from "./Button";
+import { ButtonDots } from "./ButtonDots";
 
 const white = "rgb(255, 255, 255)";
 const darkGrey = "rgb(42, 42, 44)";
 
 export const SectionOne = () => {
   return (
-    <SectionWrapper background={darkGrey}>
+    <SectionWrapper id="sectionOne" background={darkGrey}>
       <Zeppeliner color={white} />
       <WrapperCol>
         <Title>Digital transformation</Title>
@@ -28,14 +29,16 @@ export const SectionOne = () => {
           rundt og se sig om i byen.
         </Paragraph>
       </WrapperCol>
-      <Button
-        fontSize="1rem"
-        text="Start din rejse her"
-        color={white}
-        top="0.4rem"
-        center="0.5rem"
-        bottom="0.6rem"
-      />
+      <Link smooth={true} to="sectionTwo">
+        <ButtonDots
+          fontSize="1rem"
+          text="Start din rejse her"
+          color={white}
+          top="0.4rem"
+          center="0.5rem"
+          bottom="0.6rem"
+        />
+      </Link>
     </SectionWrapper>
   );
 };

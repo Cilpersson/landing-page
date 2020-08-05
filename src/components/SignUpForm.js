@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, Input, WrapperCol, WrapperForm } from "../lib/stylesheet";
+import { ButtonSubmit } from "./ButtonSubmit";
 
 export const SignUpForm = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -17,8 +18,13 @@ export const SignUpForm = () => {
     }
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert("This button doesn't do that much right now");
+  };
+
   return (
-    <Form>
+    <Form onSubmit={(event) => handleSubmit(event)}>
       <WrapperCol>
         <Input width="100%" placeholder="Navn" type="text" required></Input>
         <WrapperForm>
@@ -49,6 +55,7 @@ export const SignUpForm = () => {
             required
           ></Input>
         </WrapperForm>
+        <ButtonSubmit text="Ring mig op" type="submit" />
       </WrapperCol>
     </Form>
   );

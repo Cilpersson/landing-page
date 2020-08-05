@@ -9,7 +9,7 @@ export const SectionTwo = () => {
   const black = "rgb(27, 27, 29)";
 
   return (
-    <SectionWrapper background={white}>
+    <SectionWrapper id="sectionTwo" background={white}>
       <SectionTitle color={black}>
         Vi kan hjælpa dig med digital transformation på to fronter
       </SectionTitle>

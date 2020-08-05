@@ -1,7 +1,7 @@
 import React from "react";
 import { Dot, WrapperCol, ParagraphBold } from "../lib/stylesheet";
 
-export const Button = ({ top, center, bottom, text, color, fontSize }) => {
+export const ButtonDots = ({ top, center, bottom, text, color, fontSize }) => {
   return (
     <WrapperCol>
       <ParagraphBold size={fontSize}>{text}</ParagraphBold>

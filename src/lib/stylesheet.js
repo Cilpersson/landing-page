@@ -1,12 +1,5 @@
 import styled from "styled-components/macro";
 
-/* COLORS */
-// red: 219 100 88
-// white: 255 255 255
-// black: 27 27 29
-// light grey: 215 215 215
-// dark grey: 42 42 44
-
 /* TEXT STYLING */
 export const Title = styled.h1`
   color: rgb(255, 255, 255);
@@ -55,7 +48,7 @@ export const Paragraph = styled.p`
 `;
 
 export const ParagraphBold = styled(Paragraph)`
-  font-weight: 900;
+  font-weight: ${(props) => props.weight || "900"};
   font-size: ${(props) => props.size};
 `;
 
@@ -68,14 +61,11 @@ export const SectionWrapper = styled.section`
 
   background: ${(props) => props.background};
   margin-left: 5rem;
-  padding: 5% 25%;
-  padding: 1rem 5rem;
-
-  /* min-height: 100vh; */
+  padding: 3rem 5rem;
 
   @media (max-width: 668px) {
     margin-left: 3rem;
-    padding: 5% 15%;
+    padding: 5% 10%;
   }
 `;
 export const WrapperRow = styled.div`
@@ -111,10 +101,31 @@ export const WrapperImages = styled.div`
   }
 `;
 
+/* BUTTONS */
+export const ButtonWrapper = styled.button`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
+
+export const FormButton = styled.button`
+  border: none;
+  border-radius: 0.2rem;
+  background: rgb(255, 255, 255);
+  color: rgb(239, 90, 81);
+  padding: 1rem 2.5rem;
+  margin: 2rem 0 1.1rem;
+
+  transition: 0.5s;
+`;
+
 /* FILLER */
 
 export const Filler = styled.div`
-  height: 15px;
+  height: ${(props) => props.height || "15px"};
   width: 15px;
 `;
 
@@ -129,39 +140,28 @@ export const Navbar = styled.nav`
   background: rgb(27, 27, 29);
 
   height: 100%;
-  width: 5rem;
-
+  width: ${(props) => props.width};
   padding: 12px 0;
 
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  overflow-x: hidden;
-
-  @media (max-width: 668px) {
-    width: 3rem;
-  }
+  /* overflow-x: hidden; */
+  transition: 0.5s;
 `;
 
 /* HAMBURGER */
 
-export const ButtonWrapper = styled.button`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-`;
 export const BurgerPatty = styled.div`
-  height: 1px;
+  height: 2px;
   width: 2.5rem;
   background: rgb(215, 215, 215);
-  margin: 0.2rem;
+  margin: 0.3rem 0;
 
   @media (max-width: 668px) {
     width: 1.5rem;
+    margin: 0.2rem 0;
   }
 `;
 
@@ -173,11 +173,6 @@ export const Dot = styled.div`
   width: ${(props) => props.height};
   border-radius: 50%;
   background: ${(props) => props.color};
-`;
-
-export const DotsWrapper = styled(ButtonWrapper)`
-  /* position: absolute;
-  bottom: 5%; */
 `;
 
 /* FORM */
