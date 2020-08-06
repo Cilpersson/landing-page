@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Dot,
-  WrapperCol,
-  ParagraphBold,
-  WrapperPointer,
-} from "../lib/stylesheet";
+import { Dot, ParagraphBold, WrapperPointer } from "../lib/stylesheet";
 
 export const ButtonDots = ({ top, center, bottom, text, color, fontSize }) => {
   return (
