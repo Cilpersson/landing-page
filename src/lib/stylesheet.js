@@ -68,6 +68,7 @@ export const SectionWrapper = styled.section`
     padding: 5% 10%;
   }
 `;
+
 export const WrapperRow = styled.div`
   display: flex;
   align-items: center;
@@ -98,6 +99,21 @@ export const WrapperImages = styled.div`
 
   @media (max-width: 668px) {
     flex-direction: column;
+  }
+`;
+
+/* VIDEO */
+export const Video = styled.video`
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @media (max-width: 668px) {
+    display: none;
   }
 `;
 

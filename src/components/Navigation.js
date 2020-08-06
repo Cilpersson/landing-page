@@ -6,6 +6,7 @@ import { Navbar, Filler } from "../lib/stylesheet";
 export const Navigation = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const white = "rgb(255, 255, 255)";
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -19,10 +20,10 @@ export const Navigation = () => {
     if (width < 668 && buttonClicked) return "calc(100% / 3)";
     if (width < 668 && !buttonClicked) return "3rem";
   };
-  console.log(buttonClicked);
+
   return (
     <Navbar width={navWidth(windowWidth)}>
-      <Logo color="rgb(255, 255, 255)" width="50%" />
+      <Logo color={white} width="50%" />
       <Hamburger
         buttonClicked={buttonClicked}
         setButtonClicked={setButtonClicked}
