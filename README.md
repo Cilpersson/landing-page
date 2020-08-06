@@ -1,4 +1,4 @@
-## Landing page - technical test 💻
+## Landing page 💻
 
 ### Decisions taken a long the way and why I chose to take them
 
@@ -36,4 +36,4 @@ is not compatible with Safari, therefore I decided to add this package. It's a v
 #### EXTRA
 
 - [ ] A hero visual
-- [ ] A video
+- [x] A video
