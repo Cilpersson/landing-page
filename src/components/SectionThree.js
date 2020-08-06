@@ -14,6 +14,7 @@ import { Prize } from "../assets/Prize";
 export const SectionThree = () => {
   const white = "rgb(255, 255, 255)";
   const red = "rgb(239, 90, 81)";
+
   return (
     <SectionWrapper background={red}>
       <SectionTitle color={white}>
@@ -24,7 +25,6 @@ export const SectionThree = () => {
       </SmallSubTitle>
       <Filler height="50px" />
       <SignUpForm />
-
       <Prize color={white} height="100" />
       <Paragraph>Pentia vinder pris for digital inovation 2017</Paragraph>
       <Link smooth={true} to="sectionOne">

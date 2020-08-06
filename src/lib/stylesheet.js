@@ -1,8 +1,12 @@
 import styled from "styled-components/macro";
 
+const white = "rgb(255, 255, 255)";
+const red = "rgb(239, 90, 81)";
+const black = "rgb(0, 0, 0)";
+
 /* TEXT STYLING */
 export const Title = styled.h1`
-  color: rgb(255, 255, 255);
+  color: ${white};
   font-weight: 900;
   font-size: 2rem;
 
@@ -28,21 +32,15 @@ export const SectionTitle = styled.h2`
   }
 `;
 
-export const SubTitle = styled.h3`
-  color: ${(props) => props.color || "rgb(255, 255, 255)"};
-  font-weight: 300;
-  font-size: 1.2rem;
-`;
-
-export const SmallSubTitle = styled.h6`
-  color: ${(props) => props.color || "rgb(255, 255, 255)"};
+export const SmallSubTitle = styled.h3`
+  color: ${(props) => props.color || white};
   font-weight: 300;
   font-size: 1.4rem;
 `;
 
 export const Paragraph = styled.p`
   font-size: 1.2rem;
-  color: ${(props) => props.color || "rgb(255, 255, 255)"};
+  color: ${(props) => props.color || white};
   margin: ${(props) => props.margin || "1rem 0"};
   max-width: 868px;
 `;
@@ -61,7 +59,7 @@ export const SectionWrapper = styled.section`
 
   background: ${(props) => props.background};
   margin-left: 5rem;
-  padding: 3rem 5rem;
+  padding: 6rem 5rem;
 
   @media (max-width: 668px) {
     margin-left: 3rem;
@@ -75,6 +73,7 @@ export const WrapperRow = styled.div`
   margin: ${(props) => props.margin};
   width: 100%;
 `;
+
 export const WrapperCol = styled(WrapperRow)`
   flex-direction: column;
   max-width: ${(props) => props.width};
@@ -86,6 +85,15 @@ export const WrapperForm = styled(WrapperRow)`
   @media (max-width: 668px) {
     flex-direction: column;
   }
+`;
+
+export const WrapperPointer = styled.button`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+  background: none;
+  cursor: pointer;
 `;
 
 // For images in second section
@@ -145,38 +153,19 @@ export const ButtonWrapper = styled.button`
 export const FormButton = styled.button`
   border: none;
   border-radius: 0.2rem;
-  background: rgb(255, 255, 255);
-  color: rgb(239, 90, 81);
+  background: ${white};
+  color: ${red};
   padding: 1rem 2.5rem;
   margin: 2rem 0 1.1rem;
+  cursor: pointer;
 
   transition: 0.5s;
 `;
 
 /* FILLER */
 export const Filler = styled.div`
-  height: ${(props) => props.height || "15px"};
-  width: 15px;
-`;
-
-/* NAVIGATION */
-export const Navbar = styled.nav`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  background: rgb(27, 27, 29);
-
-  height: 100%;
-  width: ${(props) => props.width};
-  padding: 12px 0;
-
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  transition: 0.5s;
+  height: calc(100% / 4);
+  /* width: ${(props) => props.width || "30px"}; */
 `;
 
 /* HAMBURGER */
@@ -206,22 +195,61 @@ export const Form = styled.form`
   display: flex;
   width: 100%;
   max-width: 868px;
+  margin: 2rem 0 1rem;
 `;
 
 export const Input = styled.input`
   text-align: left;
   width: ${(props) => props.width};
   background: none;
-  color: rgb(255, 255, 255);
+  color: ${white};
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid ${white};
   font-size: 1.1rem;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
 
   &::-webkit-input-placeholder {
     opacity: 0.5;
     text-align: left;
-    color: rgb(255, 255, 255);
+    color: ${white};
     font-size: 1.1rem;
+  }
+`;
+/* NAVIGATION */
+export const Navbar = styled.nav`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background: ${black};
+
+  height: 100%;
+  width: ${(props) => props.width};
+  padding: 12px 0;
+
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transition: 0.8s;
+`;
+
+/* LIST */
+export const Ul = styled.ul`
+  list-style: none;
+`;
+
+export const Li = styled.li`
+  margin: 0.4rem 0;
+  text-align: left;
+  color: ${white};
+  transition: all 0.4s;
+  white-space: nowrap;
+  transition-delay: ${(props) => props.delay};
+  opacity: ${(props) => props.opacity};
+
+  @media (min-width: 668px) {
+    font-size: 1.2rem;
   }
 `;
