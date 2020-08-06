@@ -1,12 +1,8 @@
 import React from "react";
-import {
-  SectionWrapper,
-  Title,
-  SmallSubTitle,
-  Paragraph,
-  WrapperCol,
-} from "../lib/stylesheet";
+import { Image } from "../lib/stylesheet";
+import Clouds from "../assets/images/clouds.jpg";
 
 export const ImageHero = () => {
-  return <div></div>;
+  const altText = "White clouds and blue sky";
+  return <Image src={Clouds} alt={altText} />;
 };

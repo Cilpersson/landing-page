@@ -10,6 +10,7 @@ import {
 import { Zeppeliner } from "../assets/Zeppeliner";
 import { ButtonDots } from "./ButtonDots";
 import { VideoPlayer } from "./VideoPlayer";
+import { ImageHero } from "./ImageHero";
 
 const white = "rgb(255, 255, 255)";
 const darkGreyTrans = "rgb(42, 42, 44, 0.8)";
@@ -17,6 +18,7 @@ const darkGreyTrans = "rgb(42, 42, 44, 0.8)";
 export const SectionOne = () => {
   return (
     <>
+      <ImageHero />
       <VideoPlayer />
       <SectionWrapper id="sectionOne" background={darkGreyTrans}>
         <Zeppeliner color={white} />

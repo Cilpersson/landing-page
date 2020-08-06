@@ -35,5 +35,10 @@ is not compatible with Safari, therefore I decided to add this package. It's a v
 
 #### EXTRA
 
-- [ ] A hero visual
+- [x] A hero visual
 - [x] A video
+
+##### Credit
+
+[Cloud image](https://unsplash.com/photos/3Eqc3Ph4oRg)
+[Cloud video](https://www.pexels.com/video/time-lapse-of-cumulus-clouds-856171/)

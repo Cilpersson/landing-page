@@ -102,7 +102,7 @@ export const WrapperImages = styled.div`
   }
 `;
 
-/* VIDEO */
+/* HERO VIDEO */
 export const Video = styled.video`
   position: absolute;
   z-index: -10;
@@ -113,6 +113,21 @@ export const Video = styled.video`
   object-fit: cover;
 
   @media (max-width: 668px) {
+    display: none;
+  }
+`;
+
+/* HERO IMAGE */
+export const Image = styled.img`
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @media (min-width: 668px) {
     display: none;
   }
 `;
@@ -139,14 +154,12 @@ export const FormButton = styled.button`
 `;
 
 /* FILLER */
-
 export const Filler = styled.div`
   height: ${(props) => props.height || "15px"};
   width: 15px;
 `;
 
 /* NAVIGATION */
-
 export const Navbar = styled.nav`
   display: flex;
   flex-direction: column;
@@ -163,12 +176,10 @@ export const Navbar = styled.nav`
   z-index: 1;
   top: 0;
   left: 0;
-  /* overflow-x: hidden; */
   transition: 0.5s;
 `;
 
 /* HAMBURGER */
-
 export const BurgerPatty = styled.div`
   height: 2px;
   width: 2.5rem;
@@ -182,7 +193,6 @@ export const BurgerPatty = styled.div`
 `;
 
 /* DOTS */
-
 export const Dot = styled.div`
   margin: 0.2rem;
   height: ${(props) => props.height};
