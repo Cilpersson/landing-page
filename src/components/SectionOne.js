@@ -20,7 +20,11 @@ export const SectionOne = () => {
     <>
       <ImageHero />
       <VideoPlayer />
-      <SectionWrapper id="sectionOne" background={darkGreyTrans}>
+      <SectionWrapper
+        id="sectionOne"
+        background={darkGreyTrans}
+        padding="6rem 5rem 1rem"
+      >
         <Zeppeliner color={white} />
         <WrapperCol>
           <Title>Digital transformation</Title>

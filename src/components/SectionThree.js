@@ -16,7 +16,7 @@ export const SectionThree = () => {
   const red = "rgb(239, 90, 81)";
 
   return (
-    <SectionWrapper background={red}>
+    <SectionWrapper background={red} padding="6rem 5rem 1rem">
       <SectionTitle color={white}>
         Få 10 gode råd om digital transformation
       </SectionTitle>

@@ -59,7 +59,8 @@ export const SectionWrapper = styled.section`
 
   background: ${(props) => props.background};
   margin-left: 5rem;
-  padding: 6rem 5rem;
+  /* padding: 6rem 5rem; */
+  padding: ${(props) => props.padding || "6rem 5rem"};
 
   @media (max-width: 668px) {
     margin-left: 3rem;
@@ -94,6 +95,12 @@ export const WrapperPointer = styled.button`
   border: none;
   background: none;
   cursor: pointer;
+
+  margin-top: 6rem;
+
+  @media (max-width: 668px) {
+    margin-top: 3rem;
+  }
 `;
 
 // For images in second section
