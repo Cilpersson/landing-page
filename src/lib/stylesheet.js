@@ -165,19 +165,50 @@ export const FormButton = styled.button`
 /* FILLER */
 export const Filler = styled.div`
   height: calc(100% / 4);
-  /* width: ${(props) => props.width || "30px"}; */
 `;
 
 /* HAMBURGER */
-export const BurgerPatty = styled.div`
-  height: 2px;
-  width: 2.5rem;
-  background: rgb(215, 215, 215);
-  margin: 0.3rem 0;
+export const StyledBurger = styled.button`
+  border: none;
+  background: none;
+  cursor: pointer;
 
-  @media (max-width: 668px) {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  @media (min-width: 668px) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  /* Affects all div elements inside the button */
+  div {
     width: 1.5rem;
-    margin: 0.2rem 0;
+    height: 1px;
+    background: ${white};
+    transform-origin: 1px;
+    transition: all 0.2s linear;
+
+    @media (min-width: 668px) {
+      width: 2.5rem;
+      height: 2px;
+    }
+
+    /* Passing in the boolean state from the hamburger component to toggle values */
+    &:nth-child(1) {
+      transform: ${({ buttonClicked }) =>
+        buttonClicked ? "rotate(45deg)" : "rotate(0)"};
+    }
+    &:nth-child(2) {
+      opacity: ${({ buttonClicked }) => (buttonClicked ? 0 : 1)};
+    }
+    &:nth-child(3) {
+      transform: ${({ buttonClicked }) =>
+        buttonClicked ? "rotate(-45deg)" : "rotate(0)"};
+    }
   }
 `;
 
