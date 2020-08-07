@@ -40,6 +40,10 @@ is not compatible with Safari, therefore I decided to add this package. It's a v
 - [x] A hero visual
 - [x] A video
 
+#### BROWSER COMPABILTY
+
+I have tested the page and it works well in Chrome, Firefox and Safari.
+
 ##### Node version
 
 v12.18.1
