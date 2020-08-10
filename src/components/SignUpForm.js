@@ -1,8 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Form, Input, WrapperCol, WrapperForm } from "../lib/stylesheet";
+import {
+  Paragraph,
+  Form,
+  Input,
+  WrapperCol,
+  WrapperForm,
+} from "../lib/stylesheet";
 import { ButtonSubmit } from "./ButtonSubmit";
 
 export const SignUpForm = () => {
+  const [signUpMessage, setSignUpMessage] = useState("");
+
+  const [name, setName] = useState("");
+  const [phoneNbr, setPhoneNbr] = useState("");
+  const [email, setEmail] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [city, setCity] = useState("");
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const WINDOW_WIDTH_THRESHOLD = 668;
   const INPUT_WIDTH_EXPANDED = "100%";
@@ -16,15 +30,54 @@ export const SignUpForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert("This button doesn't do that much right now");
+    fetch(`https://landing-page-pentia.herokuapp.com/users`, {
+      method: "POST",
+      body: JSON.stringify({
+        name: name,
+        phoneNbr: phoneNbr,
+        email: email,
+        zipCode: zipCode,
+        city: city,
+      }),
+      headers: { "Content-Type": "application/json" },
+    }).then((res) => {
+      if (res.ok) {
+        console.log(res.ok);
+        setSignUpMessage(
+          "Thank you for showing interest in Pentia, we will contact you."
+        );
+        //Clears textarea is message is succesfully sent
+        setName("");
+        setPhoneNbr("");
+        setEmail("");
+        setZipCode("");
+        setCity("");
+      } else {
+        setSignUpMessage(
+          "Oh no, something went wrong! Make sure you filled in the form correctly."
+        );
+        console.log(res);
+      }
+    });
   };
 
   return (
     <Form onSubmit={(event) => handleSubmit(event)}>
       <WrapperCol>
-        <Input width="100%" placeholder="Navn" type="text" required></Input>
+        <Input
+          onChange={(event) => {
+            setName(event.target.value);
+          }}
+          width="100%"
+          placeholder="Navn"
+          type="text"
+          required
+        />
         <WrapperForm>
           <Input
+            onChange={(event) => {
+              setPhoneNbr(event.target.value);
+            }}
             width={
               windowWidth > WINDOW_WIDTH_THRESHOLD
                 ? INPUT_WIDTH_REDUCED
@@ -33,8 +86,11 @@ export const SignUpForm = () => {
             placeholder="Mobil"
             type="number"
             required
-          ></Input>
+          />
           <Input
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
             width={
               windowWidth > WINDOW_WIDTH_THRESHOLD
                 ? INPUT_WIDTH_REDUCED
@@ -43,10 +99,13 @@ export const SignUpForm = () => {
             placeholder="e-mail"
             type="email"
             required
-          ></Input>
+          />
         </WrapperForm>
         <WrapperForm>
           <Input
+            onChange={(event) => {
+              setZipCode(event.target.value);
+            }}
             width={
               windowWidth > WINDOW_WIDTH_THRESHOLD
                 ? INPUT_WIDTH_REDUCED
@@ -55,8 +114,11 @@ export const SignUpForm = () => {
             placeholder="Postnr."
             type="number"
             required
-          ></Input>
+          />
           <Input
+            onChange={(event) => {
+              setCity(event.target.value);
+            }}
             width={
               windowWidth > WINDOW_WIDTH_THRESHOLD
                 ? INPUT_WIDTH_REDUCED
@@ -65,9 +127,10 @@ export const SignUpForm = () => {
             placeholder="By"
             type="text"
             required
-          ></Input>
+          />
         </WrapperForm>
         <ButtonSubmit text="Ring mig op" type="submit" />
+        <Paragraph>{signUpMessage}</Paragraph>
       </WrapperCol>
     </Form>
   );
