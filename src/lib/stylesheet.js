@@ -59,7 +59,6 @@ export const SectionWrapper = styled.section`
 
   background: ${(props) => props.background};
   margin-left: 5rem;
-  /* padding: 6rem 5rem; */
   padding: ${(props) => props.padding || "6rem 5rem"};
 
   @media (max-width: 668px) {
@@ -77,7 +76,11 @@ export const WrapperRow = styled.div`
 
 export const WrapperCol = styled(WrapperRow)`
   flex-direction: column;
-  max-width: ${(props) => props.width};
+`;
+
+export const WrapperCard = styled(WrapperCol)`
+  margin: 0.5rem;
+  max-width: 334px;
 `;
 
 export const WrapperForm = styled(WrapperRow)`

@@ -4,19 +4,15 @@ import { ButtonSubmit } from "./ButtonSubmit";
 
 export const SignUpForm = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const WINDOW_WIDTH_THRESHOLD = 668;
+  const INPUT_WIDTH_EXPANDED = "100%";
+  const INPUT_WIDTH_REDUCED = "49%";
+
   useEffect(() => {
     window.addEventListener("resize", () => {
       setWindowWidth(window.innerWidth);
     });
   }, []);
-
-  const inputWidth = (width) => {
-    if (width < 668) {
-      return "100%";
-    } else {
-      return "49%";
-    }
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,13 +25,21 @@ export const SignUpForm = () => {
         <Input width="100%" placeholder="Navn" type="text" required></Input>
         <WrapperForm>
           <Input
-            width={inputWidth(windowWidth)}
+            width={
+              windowWidth > WINDOW_WIDTH_THRESHOLD
+                ? INPUT_WIDTH_REDUCED
+                : INPUT_WIDTH_EXPANDED
+            }
             placeholder="Mobil"
             type="number"
             required
           ></Input>
           <Input
-            width={inputWidth(windowWidth)}
+            width={
+              windowWidth > WINDOW_WIDTH_THRESHOLD
+                ? INPUT_WIDTH_REDUCED
+                : INPUT_WIDTH_EXPANDED
+            }
             placeholder="e-mail"
             type="email"
             required
@@ -43,13 +47,21 @@ export const SignUpForm = () => {
         </WrapperForm>
         <WrapperForm>
           <Input
-            width={inputWidth(windowWidth)}
+            width={
+              windowWidth > WINDOW_WIDTH_THRESHOLD
+                ? INPUT_WIDTH_REDUCED
+                : INPUT_WIDTH_EXPANDED
+            }
             placeholder="Postnr."
             type="number"
             required
           ></Input>
           <Input
-            width={inputWidth(windowWidth)}
+            width={
+              windowWidth > WINDOW_WIDTH_THRESHOLD
+                ? INPUT_WIDTH_REDUCED
+                : INPUT_WIDTH_EXPANDED
+            }
             placeholder="By"
             type="text"
             required

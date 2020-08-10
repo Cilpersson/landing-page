@@ -17,4 +17,11 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
     background: rgb(239, 90, 81);
 }
+
+/* Removes scrollbar for numbers */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 `;
