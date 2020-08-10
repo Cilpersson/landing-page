@@ -22,7 +22,6 @@ I have used [react-scroll](https://www.npmjs.com/package/react-scroll). I wanted
 html {
 scroll-behavior: smooth;
 }
-
 ```
 
 is not compatible with Safari, therefore I decided to add this package. It's a very straight forward implementation and my past experience with it has been great.
@@ -30,24 +29,38 @@ is not compatible with Safari, therefore I decided to add this package. It's a v
 ### Other reflections
 
 - I don't love the harsh break in the video when looping, I wish it was a cleaner loop, but I wanted do send in my code sooner rather than later so the uneaven loop stays.
+
 - There is quite a lot of prop passing to the styled components giving the impression of inline styling even though there is none. The alternative would be more uniqe components and a larger stylesheet. Both have pros and cons, not 100% certain which I prefer.
 
 #### BASIC REQ
 
 - [x] Navigation menu
+
 - [x] Heading
+
 - [x] Short lead
+
 - [x] Body text
+
 - [x] Form => - input for name, telephone number e-mail address, zip code and city.
 
 #### EXTRA
 
 - [x] A hero visual
+
 - [x] A video
 
 #### BROWSER COMPATIBILITY
 
 I have tested the page and it works well in Chrome, Firefox and Safari.
+
+**Clone it and:**
+
+`npm install` => `npm start`
+
+**or view it live:**
+
+[Landing page](https://landing-page-pentia.netlify.app/)
 
 ##### Node version
 
