@@ -71,6 +71,7 @@ export const SignUpForm = () => {
           width="100%"
           placeholder="Navn"
           type="text"
+          value={name}
           required
         />
         <WrapperForm>
@@ -85,6 +86,7 @@ export const SignUpForm = () => {
             }
             placeholder="Mobil"
             type="number"
+            value={phoneNbr}
             required
           />
           <Input
@@ -98,6 +100,7 @@ export const SignUpForm = () => {
             }
             placeholder="e-mail"
             type="email"
+            value={email}
             required
           />
         </WrapperForm>
@@ -113,6 +116,7 @@ export const SignUpForm = () => {
             }
             placeholder="Postnr."
             type="number"
+            value={zipCode}
             required
           />
           <Input
@@ -126,6 +130,7 @@ export const SignUpForm = () => {
             }
             placeholder="By"
             type="text"
+            value={city}
             required
           />
         </WrapperForm>
