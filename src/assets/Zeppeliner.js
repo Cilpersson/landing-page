@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 export const Zeppeliner = ({ color }) => {
+  const MOBILE_WIDTH_THRESHOLD = 668;
+  const DESKTOP_WIDTH_THRESHOLD = 1024;
+
+  const MOBILE_SIZE = "50%";
+  const TABLET_SIZE = "30%";
+  const DESKTOP_SIZE = "15%";
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   //Gets width of screen on resize
@@ -11,13 +18,13 @@ export const Zeppeliner = ({ color }) => {
   }, []);
 
   const iconSize = (width) => {
-    if (width < 668) {
-      return "50%";
+    if (width < MOBILE_WIDTH_THRESHOLD) {
+      return MOBILE_SIZE;
     }
-    if (width > 1024) {
-      return "15%";
+    if (width > DESKTOP_WIDTH_THRESHOLD) {
+      return DESKTOP_SIZE;
     } else {
-      return "30%";
+      return TABLET_SIZE;
     }
   };
 

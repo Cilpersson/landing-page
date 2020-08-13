@@ -47,7 +47,7 @@ export const SectionOne = () => {
             center="0.5rem"
             bottom="0.6rem"
           />
-        </Link>{" "}
+        </Link>
       </SectionWrapper>
     </>
   );
